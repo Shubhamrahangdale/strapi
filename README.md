@@ -1,57 +1,72 @@
-# 🚀 Getting started with Strapi
+# Deploy the Strapi API
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+## 🔗Fork this Repo link
+👉 [https://github.com/Shubhamrahangdale/strapi].
 
-### `develop`
+# 🕜Requirement 
+1.AWS account with ec2 t2.micro/t3.micro - (Ubuntu)
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+2.Github account
 
-```
-npm run develop
-# or
-yarn develop
-```
+3.Gtrong connection network
 
-### `start`
+## Steps For Strapi API on EC2 manually 
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+## setup & upgrade repository
 
-```
-npm run start
-# or
-yarn start
-```
+ $ sudo apt update
 
-### `build`
+ ## install Node.js-->  
+ 
+ $ sudo apt install nodejs
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+## install Strapi--> 
 
-```
-npm run build
-# or
-yarn build
-```
+ $ npm install -g strapi@latest
 
-## ⚙️ Deployment
+## create Strapi project
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+$ npx create-strapi-app strapi --quickstart
+ 
+## Navigate to the project directory
 
-## 📚 Learn more
+$ cd strapi
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+Add 1337 as a port in inbound rule
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+## Start the Strapi server
 
-## ✨ Community
+$ npm run develop
+  or
+$ yarn develop
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Add 1337 as a port in inbound rule 
 
----
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+## 👉Copy the public ip and paste it on browser with port number
+
+so we  can see the sucessfully deployed with the help of manual deployment
+
+## GitHub Actions Workflow (main.yml):
+
+1. Trigger the workflow on push to the main branch.
+2. Checkout the code.
+3. Set up Node.js environment.
+4. Set up strapi.
+5. Install dependencies.
+6. Build the application.
+7. Decode and set up the SSH key.
+8. Deploy to EC2.
+
+# Explanation of Secrets
+
+EC2_HOST: Your EC2 instance's public IP or DNS name.
+EC2_KEY: The content of your PEM key file.
+EC2_USER: The username for SSH access (e.g., ubuntu for Ubuntu instances).
+
+
+
+
+
+
+
