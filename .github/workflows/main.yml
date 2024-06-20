@@ -17,21 +17,16 @@ jobs:
         run: npm install
       - name: Build Strapi
         run: yarn build
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.EC2_KEY }}
+      
       - name: Deploy to EC2
-        env:
+        uses: appleboy/ssh-action@master
+        with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          # key: ${{ secrets.EC2_KEY }}
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{
-          secrets.EC2_HOST } "cd /home/ubuntu/strapi && yarn develop"
+          username: ubuntu
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            cd /home/ubuntu/strapi
+            git pull origin main
+            yarn install
+            yarn build
+            pm2 restart strapi
