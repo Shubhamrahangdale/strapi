@@ -1,9 +1,9 @@
 # Deploy the Strapi API
 
-## 🔗Fork this Repo link
-👉 [https://github.com/Shubhamrahangdale/strapi].
+## Fork this Repo link
+ [https://github.com/Shubhamrahangdale/strapi].
 
-# 🕜Requirement 
+# Requirement 
 1.AWS account with ec2 t2.micro/t3.micro - (Ubuntu)
 
 2.Github account
@@ -33,6 +33,8 @@ $ npx create-strapi-app strapi --quickstart
 $ cd strapi
 
 Add 1337 as a port in inbound rule
+![github-strapi1](https://github.com/Shubhamrahangdale/strapi/assets/102543960/4c5d2188-b092-402d-8653-3c0dc845afc0)
+
 
 ## Start the Strapi server
 
@@ -43,7 +45,11 @@ $ yarn develop
 Add 1337 as a port in inbound rule 
 
 
-## 👉Copy the public ip and paste it on browser with port number
+## Copy the public ip and paste it on browser with port number
+
+![github-strapi2](https://github.com/Shubhamrahangdale/strapi/assets/102543960/c73d655a-0567-4cb0-a35a-692f6573d30e)
+
+![github-strapi2](https://github.com/Shubhamrahangdale/strapi/assets/102543960/4e2abce5-c440-4aa2-bca5-30df7cad1089)
 
 so we  can see the sucessfully deployed with the help of manual deployment
 
@@ -65,6 +71,12 @@ EC2_KEY: The content of your PEM key file.
 EC2_USER: The username for SSH access (e.g., ubuntu for Ubuntu instances).
 
 
+# when you Update main.yml that will automatically run the deployment 
+
+
+![github-strapi4](https://github.com/Shubhamrahangdale/strapi/assets/102543960/bc29591c-6f72-47dc-9154-3b8a99fb69ab)
+
+![github-strapi5](https://github.com/Shubhamrahangdale/strapi/assets/102543960/372e1efb-00d3-4f1c-b5fa-d428d11a104c)
 
 
 
