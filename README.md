@@ -4,7 +4,7 @@
  [https://github.com/Shubhamrahangdale/strapi].
 
 # Requirement 
-1.AWS account with ec2 t2.micro/t3.micro - (Ubuntu)
+1.AWS account with ec2 t2.small/t3.small - (Ubuntu)
 
 2.Github account
 
@@ -25,8 +25,10 @@
  $ npm install -g strapi@latest
 
 ## create Strapi project
+cd ~ 
+$ npx -y create-strapi-app strapi --quickstart
 
-$ npx create-strapi-app strapi --quickstart
+choose 𝐬𝐤𝐢𝐩 and processed for the manual installation
  
 ## Navigate to the project directory
 
@@ -38,9 +40,11 @@ Add 1337 as a port in inbound rule
 
 ## Start the Strapi server
 
-$ npm run develop
-  or
-$ yarn develop
+Go to the inside dircetory for for your project to start , stop & restart strapi 👉ex: here is the strapi
+
+$ npm run start(To start the npm)
+$ npm run stop (To stop the npm)
+$ npm run restart (To restart npm)
 
 Add 1337 as a port in inbound rule 
 
